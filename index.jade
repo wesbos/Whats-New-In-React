@@ -1,0 +1,588 @@
+doctype html
+html
+  head
+      title What's New In React?
+      meta(charset='utf-8')
+      script(src='slides.js')
+      link(href="https://fonts.googleapis.com/css?family=Gravitas+One|Yeseva+One" rel="stylesheet")
+      link(rel="stylesheet", href="./grid-styles.css")
+      link(rel="stylesheet", href="./prism.css")
+
+      link(href='styles.css'  rel='stylesheet' type='text/css')
+      style.
+        .grid { display: grid !important; grid-gap: 20px }
+        .grid .item { color: black; }
+        style { display: inline-grid !important; }
+    body
+      section.slides.layout-regular.template-default
+
+        article
+          h1: mark Hi, I&apos;m Wes Bos
+          p: br
+          p.sub
+            img(src="images/canada-flag.png")
+            img(src="images/canada-flag.png")
+            img(src="images/canada-flag.png")
+            img(src="images/canada-flag.png")
+            img(src="images/canada-flag.png")
+            img(src="images/canada-flag.png")
+
+        article.first
+          h1: mark What's New<br>In React?!
+
+        article
+          h2(style="font-size:60px;") These slides will be available shortly after this talk <br>I&apos;ll tweet the link out.
+          img(src='images/Twitter_logo_white.png', width='300' style="margin:100px auto")
+
+          h2
+            a(href='http://twitter.com/wesbos', target='_blank') @wesbos
+
+        article
+          h1 I make Web Development Courses
+        article
+          a(href='https://ES6.io/?utm_source=toolingtalk&utm_medium=link&utm_campaign=talkpromo')
+            img.wide(src='https://ES6.io/images/es6-facebook-share.png')
+          a(href='https://ES6.io/?utm_source=toolingtalk&utm_medium=link&utm_campaign=talkpromo') ES6.io
+
+        article
+          a(href='https://ReactForBeginners.com/?utm_source=toolingtalk&utm_medium=link&utm_campaign=talkpromo')
+            img.wide(src='https://reactforbeginners.com/images/facebook-share.png')
+          a(href='https://ReactForBeginners.com/?utm_source=toolingtalk&utm_medium=link&utm_campaign=talkpromo') ReactForBeginners.com
+
+        article
+          a(href='https://LearnNode.com/?utm_source=toolingtalk&utm_medium=link&utm_campaign=talkpromo')
+            img.wide(src='https://learnnode.com/images/NODE/node-facebook-share.jpg')
+          a(href='https://LearnNode.com/?utm_source=toolingtalk&utm_medium=link&utm_campaign=talkpromo') LearnNode.com
+
+        article
+          a(href='https://JavaScript30.com/?utm_source=toolingtalk&utm_medium=link&utm_campaign=talkpromo')
+            img.wide(src='https://javascript30.com/images/JS3-social-share.png')
+          a(href='https://JavaScript30.com/?utm_source=toolingtalk&utm_medium=link&utm_campaign=talkpromo') JavaScript30.com
+
+        article
+          a(href='https://CSSGrid.io/?utm_source=toolingtalk&utm_medium=link&utm_campaign=talkpromo')
+            img.wide(src='https://cssgrid.io/images/GRID-social-share.png')
+          a(href='https://CSSGrid.io/?utm_source=toolingtalk&utm_medium=link&utm_campaign=talkpromo') CSSGrid.io
+
+        article
+          img.high(src="https://pbs.twimg.com/media/DLTTKRoXUAEwuZR.jpg:large")
+          a(href='https://syntax.fm') Syntax.fm
+
+        article
+          h1 This talk is about what is new in React
+
+        article
+          h1 Everything you know will be useless in 2 months
+
+
+        article
+          h1 JUST JOSHIN' YA
+          p.sub RELAX FOLKS
+
+        article
+          h1.skew.medium Most of these things address current React pains, or help us develop better in edgecases
+
+
+        article
+          .grid
+            .item Context
+            .item Fragments
+            .item Error Boundaries
+            .item New Refs API
+            .item Portals
+            .item Dev Tools / Metrics
+            .item Suspense
+
+        article
+          h1 READY?!
+          p.sub this.letsDoIt()
+
+        article
+          .grid
+            .item.current Context
+            .item Fragments
+            .item Error Boundaries
+            .item New Refs API
+            .item Portals
+            .item Dev Tools / Metrics
+            .item Suspense
+
+        article
+          h1 Context
+          p.sub New API, Officially Supported
+
+        article
+          h2 React Context Allows you to pass data down multiple levels without the need to pass though props at each level
+
+        article
+          img.wide(src="./images/screenshots/2a8cf532e3b0.png")
+
+        article
+          img.wide(src="./images/screenshots/2fdcb1e8926b.png")
+
+        article
+          img.wide(src="./images/screenshots/95b0a816817f.png")
+
+        article
+          h1 Prop Drilling
+          p.sub Passing Data via props is by design in React, but can be cumbersome in some applications
+
+        article
+          h2 Context allows us to defined state, and state updaters at the top of our application and then inject it at any level deep.
+
+        article
+          h1 Here is how it works
+
+        article
+          h1 Two Parts: Provider and Consumer
+
+        article
+          h1 Provider
+          p.sub Where the data lives
+          h1 Consumer
+          p.sub How to access the data
+
+
+        article
+          h1 Let's Code It!
+
+        article
+          p First we make a Context
+          img.wide(src="./images/screenshots/d58ce7c7bdd3.png")
+
+        article
+          p Then We create a provider
+          img.wide(src="./images/screenshots/f5cccea33d8a.png")
+
+        article
+          h1.medium The value prop can pass any type of data down, including state and functions
+
+        article
+          img.high(src="./images/screenshots/15fdae917203.png")
+
+        article
+          h2 Now we need to put the provider into our application
+          p Can go anywhere, as long as it's higher in the component tree than anything that needs it
+
+        article
+          p This usually means wrapping your application with it
+          img.high(src="./images/screenshots/3642c6831da3.png")
+
+        article
+          h1.medium Once the Provider is in your application, your context values are "in the air"
+
+        article
+          h1 Now, the Consumer
+
+        article
+          h2 Remember <code>MyContext</code> from earlier?
+          img.wide(src="./images/screenshots/d58ce7c7bdd3.png")
+
+        article
+          p Make a consumer variable.
+          img(src="./images/screenshots/3f8737990068.png")
+          small you'll probably want to export it too
+
+        article
+          h2 Now Anywhere you need your data, just use your consumer component.
+
+        article
+          p.skew The child of your consumer is a (render prop) function that passes you the context values.
+
+        article
+          img.high(src="./images/screenshots/4361617b02ed.png")
+
+        article
+          img.high(src="./images/screenshots/f8d562660c62.png")
+
+        article
+          h1 Pretty Sweet!
+          p.sub Should we context everything?
+
+        article
+          p Not quite, some notes...
+
+        article
+          h1 Prop Drilling isn't bad
+          p React is intentionally self-contained
+          p Only use context if the complexity is worth it
+
+        article
+          h1 Less Self Contained
+          p Your components rely on outside data
+
+        article
+          h1 Sometimes Prop Drilling is just a result of bad design
+
+        article
+          img.high(src="./images/screenshots/3149107c4eb1.png")
+        article
+          h1 Very Handy in medium sized applications
+          p.sub Passing State too cumbersome, state manager unnecessary
+
+        article
+          .grid
+            .item Context
+            .item.current Fragments
+            .item Error Boundaries
+            .item New Refs API
+            .item Portals
+            .item Dev Tools / Metrics
+            .item Suspense
+
+        article
+          h1.medium Fragments let us return multiple elements from a component
+
+        article
+          h1 The Problem
+
+        article
+          img.wide(src="./images/screenshots/c921e460ad83.png")
+
+        article
+          img.wide(src="./images/screenshots/9a84670f7d85.png")
+
+        article
+          img.wide(src="./images/screenshots/60b6be467a70.png")
+
+        article
+          h1 Extra Divs Suck
+          p.sub Goofs with Grid, Flexbox, Direct Descendant Selectors
+
+        article
+          img.wide(src="./images/screenshots/8e3d4c6e9b9e.png")
+        article
+          img.wide(src="./images/screenshots/8e3d4c6e9b9e.png")
+        article
+          img.high(src="./images/screenshots/1fdf005628d4.png")
+
+        article
+          h1 Enter Fragments
+          p.sub I like to call them Ghost Elements
+
+        article
+          img.high(src="./images/screenshots/d9bb1dac8dc4.png")
+
+        article
+          img.high(src="./images/screenshots/4737fd4819e7.png")
+
+        article
+          p As of Babel 7
+          img.high(src="./images/screenshots/d3b295a40556.png")
+
+        article
+          img.high(Src="./images/screenshots/95f6cb0fba1b.png")
+
+        article
+          .grid
+            .item Context
+            .item Fragments
+            .item.current Error Boundaries
+            .item New Refs API
+            .item Portals
+            .item Dev Tools / Metrics
+            .item Suspense
+
+        article
+          h1 Error Boundaries
+          p.sub Catch Errors throw in child components
+
+        article
+          img.high(src="./images/screenshots/34b7e97f4cd2.png")
+
+        article
+          img.high(src="./images/screenshots/1218122f94e1.png")
+        article
+          img.wide(src="./images/screenshots/341c2d41ef9a.png")
+
+        article
+          h2 Catches Errors in render() and lifecycle hooks
+
+        article
+          h2 The point of error boundaries is to be able to display <em>something</em> to the user when things break
+
+        article
+          h2 Doesn't Catch:
+          ul.build
+            li Event handlers
+              ul
+                li render doesn't depend on them
+                li can be caught with try/catch or .catch()
+            li Errors thrown in the error boundary
+
+        article
+          h1 Why is this special?
+          p.sub What about try/catch?
+
+        article
+          h1 render is declarative
+          p.sub <code>&lt;FamilyMembers/></code>
+
+        article
+          h1 Not Imperative
+          p.sub <code>try { ShowFamilyMembers() } catch (err) { ... }</code>
+
+        article
+          .grid
+            .item Context
+            .item Fragments
+            .item Error Boundaries
+            .item.current New Refs API
+            .item Portals
+            .item Dev Tools / Metrics
+            .item Suspense
+
+        article
+          h1 Refs!
+          p.sub What are they good for?
+
+        article
+          h1 Refs
+          p.sub An escape hatch for accessing DOM elements
+
+        article
+          p Getting access to a ref is helpful for:
+          ul.build
+            li Performing DOM api methods
+            li Integrating 3rd party libraries which don't have a react library (maps, charts, legacy jQuery UI)
+            li Animations
+
+        article
+          p Back in the day
+          img.wide(src="./images/screenshots/9eaebdcd3fa9.png")
+
+        article
+          p New Refs API
+          img.wide(src="./images/screenshots/d234edad8e68.png")
+
+        article
+          h1.medium Once you have a ref, you have access to the DOM element and can call methods on it
+
+        article
+          p Warning: Not very exciting
+          img.wide(src="./images/screenshots/7da7ed48695b.gif")
+
+        article
+          img.wide(src="./images/screenshots/fa842bcb4142.png")
+
+        article
+          h1 Use with Care
+          p.sub You probably don't want a ref
+
+        article
+          h2 Mirror Values to state for inputs
+          p: code &lt;input<br>onChange={(e) => this.setState({ [e.target.name]: e.target.value })} />
+
+        article
+          h1 Access elements in events with <code>e.target</code>
+
+        article
+          .grid
+            .item Context
+            .item Fragments
+            .item Error Boundaries
+            .item New Refs API
+            .item.current Portals
+            .item Dev Tools / Metrics
+            .item Suspense
+        article
+          h1(style="font-size: 350px; width: 100%; position: relative;")
+            span(style="position: absolute; top: -450px; right: -190px;") Port
+            span(style="position: absolute; left: -190px;") tals
+        article
+          h1 Not Every Website is built 100% in React
+        article
+          h1 Could be server rendered CMS
+          p Drupal, WordPress, Static, Legacy...
+        article
+          h1.medium React is often used for components on a website
+        article
+          img.high(src="./images/screenshots/c383e7efef80.png")
+        article
+          img.high(src="./images/screenshots/efcf5d24301d.png")
+
+        article
+          h1 How do you React outside of your react root?
+          p.skew (it's portals...)
+
+        article
+          h1 Here is how it works
+
+        article
+          img.high(src="./images/screenshots/5fdd87279f1d.gif")
+        article
+          img.wide(src="./images/screenshots/fee1bda374ea.png")
+        article
+          img.high(src="./images/screenshots/346367a8beb8.png")
+        article
+          img.high(src="./images/screenshots/337470369b9a.png")
+        article
+          img.wide(src="./images/screenshots/20428156b97a.png")
+        article
+          img.wide(src="./images/screenshots/adb7c4ea4b26.png")
+        article
+          img.high(src="./images/screenshots/5fdd87279f1d.gif")
+
+        article
+          .grid
+            .item Context
+            .item Fragments
+            .item Error Boundaries
+            .item New Refs API
+            .item Portals
+            .item Dev Tools / Metrics
+            .item.current Suspense
+        article
+          h1 Suspense
+          p.sub Coming To React Soon
+
+        article
+          h1 Very Much under development
+          p.sub It will change
+
+        article
+          h1 React suspense is all about waiting for things to load before render
+
+        article
+          small.sub examples:
+          h1.medium Code split bundles
+          small -
+          h1.medium Data fetching
+          small -
+          h1.medium Images Sources
+
+        article
+          h1.medium React suspense is a way to suspend or pause rendering of a component while waiting for async data to load
+
+        article
+          h2 Why is is special?
+          p Let's look at how we currently do it
+
+        article
+          img.high(src="./images/screenshots/b8fb24970454.png")
+
+        article
+          h2 This works okay, but...
+          p The Loader UI and the data fetching always have to live in the same component
+
+        article
+          h1.medium.white React Suspense will decouple where you<br> <mark>wait for data</mark><br>&<br><mark>where you show</mark> Loading UI
+
+        article
+          h2.white A React Suspense Placeholder component will be able to <mark>detect</mark> if any of it's child tree components are loading data
+
+        article
+          h2.white A React Suspense Placeholder component will also be able to avoid showing Loaders earlier than necessary on fast connections
+
+        article
+          h1 find where this goes
+          h1 No Setting Loading States
+          h1 No passing methods through props to turn on/off
+
+        article
+          h1 SHOW ME THE CODE
+          p.sub This might change!
+
+        article
+          p 1. Create a Cache
+          img.wide(src="./images/screenshots/3e72597e7c27.png")
+
+        article
+          p 2. Create a Resource from your async functions
+          img.wide(src="./images/screenshots/d8cc0b83b818.png")
+
+        article
+          p 3. Read that data before render
+          img.wide(src="./images/screenshots/e9c6c147db09.png")
+
+        article
+          h3: code const user = UserResource.read(cache);
+          p This will block this <code>render()</code> function - only that one render - until the data is resolved
+
+        article
+          h3: code UserResource.preload(cache);
+          p Can be called at any time to async preload content.
+
+        article
+          h3: code NextUserResource.preload(cache);
+          p Preload next user before navigation
+
+        article
+          h1 Where is the loading state?!?!
+          p.sub Remember we said we can decouple loading states?
+
+        article
+          h1 Enter <code>&lt;Placeholder></code>
+
+        article
+          p 4. Wrap any components(s) with resources with a <code>&lt;Placeholder></code>
+          img(width="1200" src="./images/screenshots/a45b536fa6a1.png")
+          p Then...
+        article
+          p 5. Provide a <code>delayMs</code> and <code>fallback</code>  prop
+          img.wide(src="./images/screenshots/144acd093799.png")
+        article
+          h1.white The <code>delayMs</code> prop determines how long to <mark>show nothing</mark>
+        article
+          h1.medium.white The <code>fallback</code> prop is a component UI to show if render is still suspended past <code>delayMs</code>
+        article
+          h1 Some Important Notes
+        article
+          h1.medium A Placeholder can be placed <em>anywhere</em> you want the Loading UI to show.
+
+        article
+          img.wide(src="./images/screenshots/08cbf7cf6b80.png")
+        article
+          h1.medium A Placeholder can have many children that contain resources - it will wait for all of them.
+        article
+          img.high(src="./images/screenshots/7deabfa88ee9.png")
+
+        article
+          h1 Demo
+          a(href="https://react-fiber-experiments.surge.sh/suspense/placeholder/delayMs/1000/duration/2000" target="_blank") react-fiber-experiments by Christophe Rosse
+
+        article
+          .grid
+            .item Context
+            .item Fragments
+            .item Error Boundaries
+            .item New Refs API
+            .item Portals
+            .item.current Dev Tools / Metrics
+            .item Suspense
+
+        article
+          h1 Dev Tools and Metrics
+          p.sub Real Quick
+
+        article
+          h2 The new React profiler will give you insights into potential performance bottlenecks in your application
+
+        article
+          ul.build
+            li How long a render took
+            li How many times a render happened
+            li Which components are expensive
+            li Props and State at time of Commit
+            li What caused a re-render
+
+        article
+          h1 More info on the React Blog
+          a(href="https://reactjs.org/blog/2018/09/10/introducing-the-react-profiler.html") Here
+
+        article
+          h1 That's it!
+
+        article
+          h1 React is Evolving
+          p.sub but..
+
+        article
+          h1 Most of these are additions, not changes
+          p.sub They make our applications better!
+
+        article
+          h1 Hope you learned a thing or two. Thanks!
+          p.sub I have stickers!
+      script(src='prism.js' data-manual)
+      script(src='./custom-highlight.js')

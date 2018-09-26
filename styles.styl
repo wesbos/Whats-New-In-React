@@ -1,0 +1,186 @@
+// sink by AomAm from the Noun Project
+// Weight by viraj from the Noun Project
+
+@import "_deps"
+// @import "_code"
+
+yellow = #ffc600
+orange = #FF9D00
+purple = #2E0067
+blue = #193549
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+// Mixin
+h1,h2,h3,h4,h5,h6
+  color yellow
+  font-weight 900
+  text-transform: uppercase
+  line-height: auto
+  text-shadow 5px 5px 0 alpha(black, 0.2)
+
+p, a, li
+  text-shadow 4px 3px 0 rgba(0,0,0,0.3)
+  margin 15px 0
+
+p, li, small
+  color white
+  font-weight 700
+  text-transform: uppercase
+  font-size 80px
+  letter-spacing: 1px
+  line-height: 1.5
+
+.sub
+  transform skew(0, -4deg)
+  margin-top 10px
+  font-weight 200
+  color white !important
+  font-size 60px
+
+h2 + .sub
+  transform none
+
+small
+  font-size 25px
+
+h1
+  transform skew(0, -4deg) rotateY(20deg)
+  font-size 200px
+  color yellow
+  letter-spacing -2px
+  a
+    text-decoration none
+    font-size 20px
+    color black
+    padding-left 10px
+
+ul {
+  text-align: left;
+  margin-left: 100px;
+}
+
+h2
+  font-size 100px
+  // color yellow
+  line-height 1.2
+  margin 0
+  font-weight 900
+  &.title
+    font-size 70px
+  a
+    color yellow
+  &.skew
+    transform skew(0, -4deg)
+    display: inline-block
+
+h2 + img
+  margin-top 20px !important
+
+
+.large
+  font-size 200px
+
+.big
+  font-size 250px
+
+.medium
+  font-size 150px
+
+.huge
+  font-size 450px
+
+h3
+  font-size 70px
+  color yellow
+  line-height 1.5
+
+h4
+  color yellow
+  font-size 50px
+
+.halves
+  width 100%
+
+.half
+  width 50%
+
+
+img.wide
+  width 100%
+  height auto
+  max-height none
+
+img.high
+  width auto
+  height 100%
+  max-height 1200px
+
+video.high
+  width: auto;
+  height: 100%;
+  min-width: 0;
+
+.hl
+  color yellow
+
+
+mark
+  background yellow
+  color black
+  color var(--black)
+  text-shadow none
+  padding 0 10px;
+  color: black;
+
+article.treats
+  h1
+    margin-bottom 90px
+    font-size 250px
+    // color orange
+
+
+.emoji
+  font-size 116px
+  font-family serif
+
+
+// Smaller Screens
+body.square
+  .slides
+    & > article
+      w = 1920
+      h = 1080
+      width w px
+      height h px
+      margin-left (w/2) * -1px
+      margin-top (h/2) * -1px
+      border-radius 0
+      h2
+        font-size 110px
+      p, li, small
+        font-size 30px
+      .big
+        font-size 180px
+      .large
+        font-size 140px
+      .huge
+        font-size 220px
+
+.itm {
+              background: var(--yellow);
+              color: black;
+              padding: 15px;
+            }
+
+.alignment {
+                height: 700px;
+              width: 700px;
+              border:10px solid red;
+}
