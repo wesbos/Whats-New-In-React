@@ -16,6 +16,8 @@ html
     body
       section.slides.layout-regular.template-default
 
+        article.first
+          h1: mark What's New<small style="color: black;">ish</small><br>In React?!
         article
           h1: mark Hi, I&apos;m Wes Bos
           p: br
@@ -27,8 +29,6 @@ html
             img(src="images/canada-flag.png")
             img(src="images/canada-flag.png")
 
-        article.first
-          h1: mark What's New<br>In React?!
 
         article
           h2(style="font-size:60px;") These slides will be available shortly after this talk <br>I&apos;ll tweet the link out.
@@ -90,8 +90,8 @@ html
             .item Error Boundaries
             .item New Refs API
             .item Portals
-            .item Dev Tools / Metrics
             .item Suspense
+            .item Dev Tools / Metrics
 
         article
           h1 READY?!
@@ -104,8 +104,8 @@ html
             .item Error Boundaries
             .item New Refs API
             .item Portals
-            .item Dev Tools / Metrics
             .item Suspense
+            .item Dev Tools / Metrics
 
         article
           h1 Context
@@ -128,7 +128,7 @@ html
           p.sub Passing Data via props is by design in React, but can be cumbersome in some applications
 
         article
-          h2 Context allows us to defined state, and state updaters at the top of our application and then inject it at any level deep.
+          h2 Context allows us to define state, and state updaters at the top of our application and then inject it at any level deep.
 
         article
           h1 Here is how it works
@@ -166,7 +166,7 @@ html
 
         article
           p This usually means wrapping your application with it
-          img.high(src="./images/screenshots/3642c6831da3.png")
+          img(width="800" src="./images/screenshots/3642c6831da3.png")
 
         article
           h1.medium Once the Provider is in your application, your context values are "in the air"
@@ -204,12 +204,12 @@ html
 
         article
           h1 Prop Drilling isn't bad
-          p React is intentionally self-contained
-          p Only use context if the complexity is worth it
+          p.sub React is intentionally self-contained
+          p.sub Only use context if the complexity is worth it
 
         article
-          h1 Less Self Contained
-          p Your components rely on outside data
+          h1 It's Less Self Contained
+          p.sub Your components rely on outside data
 
         article
           h1 Sometimes Prop Drilling is just a result of bad design
@@ -227,9 +227,8 @@ html
             .item Error Boundaries
             .item New Refs API
             .item Portals
-            .item Dev Tools / Metrics
             .item Suspense
-
+            .item Dev Tools / Metrics
         article
           h1.medium Fragments let us return multiple elements from a component
 
@@ -249,8 +248,6 @@ html
           h1 Extra Divs Suck
           p.sub Goofs with Grid, Flexbox, Direct Descendant Selectors
 
-        article
-          img.wide(src="./images/screenshots/8e3d4c6e9b9e.png")
         article
           img.wide(src="./images/screenshots/8e3d4c6e9b9e.png")
         article
@@ -280,8 +277,8 @@ html
             .item.current Error Boundaries
             .item New Refs API
             .item Portals
-            .item Dev Tools / Metrics
             .item Suspense
+            .item Dev Tools / Metrics
 
         article
           h1 Error Boundaries
@@ -329,8 +326,8 @@ html
             .item Error Boundaries
             .item.current New Refs API
             .item Portals
-            .item Dev Tools / Metrics
             .item Suspense
+            .item Dev Tools / Metrics
 
         article
           h1 Refs!
@@ -356,7 +353,7 @@ html
           img.wide(src="./images/screenshots/d234edad8e68.png")
 
         article
-          h1.medium Once you have a ref, you have access to the DOM element and can call methods on it
+          h1.medium.white Once you have a ref, you have access to the <mark>DOM element</mark> and can call methods on it
 
         article
           p Warning: Not very exciting
@@ -377,23 +374,23 @@ html
           h1 Access elements in events with <code>e.target</code>
 
         article
+          h1(style="font-size: 350px; width: 100%; position: relative;")
+            span(style="position: absolute; top: -450px; right: -190px;") Port
+            span(style="position: absolute; left: -190px;") tals
+        article
           .grid
             .item Context
             .item Fragments
             .item Error Boundaries
             .item New Refs API
             .item.current Portals
-            .item Dev Tools / Metrics
             .item Suspense
-        article
-          h1(style="font-size: 350px; width: 100%; position: relative;")
-            span(style="position: absolute; top: -450px; right: -190px;") Port
-            span(style="position: absolute; left: -190px;") tals
+            .item Dev Tools / Metrics
         article
           h1 Not Every Website is built 100% in React
         article
           h1 Could be server rendered CMS
-          p Drupal, WordPress, Static, Legacy...
+          p.sub Drupal, WordPress, Static, Legacy...
         article
           h1.medium React is often used for components on a website
         article
@@ -430,8 +427,8 @@ html
             .item Error Boundaries
             .item New Refs API
             .item Portals
-            .item Dev Tools / Metrics
             .item.current Suspense
+            .item Dev Tools / Metrics
         article
           h1 Suspense
           p.sub Coming To React Soon
@@ -441,7 +438,7 @@ html
           p.sub It will change
 
         article
-          h1 React suspense is all about waiting for things to load before render
+          h1.medium React suspense is all about waiting for things to load before render
 
         article
           small.sub examples:
@@ -452,7 +449,7 @@ html
           h1.medium Images Sources
 
         article
-          h1.medium React suspense is a way to suspend or pause rendering of a component while waiting for async data to load
+          h1.medium.white React suspense is a way to <mark>suspend or pause</mark>rendering of a component while waiting for async data to load
 
         article
           h2 Why is is special?
@@ -473,11 +470,6 @@ html
 
         article
           h2.white A React Suspense Placeholder component will also be able to avoid showing Loaders earlier than necessary on fast connections
-
-        article
-          h1 find where this goes
-          h1 No Setting Loading States
-          h1 No passing methods through props to turn on/off
 
         article
           h1 SHOW ME THE CODE
@@ -548,8 +540,8 @@ html
             .item Error Boundaries
             .item New Refs API
             .item Portals
-            .item.current Dev Tools / Metrics
             .item Suspense
+            .item.current Dev Tools / Metrics
 
         article
           h1 Dev Tools and Metrics

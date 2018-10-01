@@ -65,12 +65,27 @@ h6 {
   padding: 20px;
 }
 
+@keyframes dance {
+  from {
+    transform: scale(2.2) rotate(2deg) rotateX(10deg);
+  }
+  to {
+    transform: scale(2);;
+
+  }
+}
+
 .item.current {
   background: #00ffe7;
   transform: scale(1.5);
   box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.2);
+  animation: dance 0.5s infinite alternate;
 }
 
 .item p {
   margin: 0 0 5px 0;
+}
+
+.grid {
+  perspective: 500px;
 }

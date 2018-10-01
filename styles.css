@@ -460,11 +460,11 @@ p,
 li,
 small {
   color: #fff;
-  font-weight: 700;
+  font-weight: 200;
   text-transform: uppercase;
   font-size: 80px;
   letter-spacing: 1px;
-  line-height: 1.5;
+  line-height: 1.2;
 }
 .sub {
   -webkit-transform: skew(0, -4deg);
@@ -487,6 +487,7 @@ h1 {
   font-size: 200px;
   color: #ffc600;
   letter-spacing: -2px;
+  line-height: 1;
 }
 h1 a {
   text-decoration: none;
