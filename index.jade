@@ -91,7 +91,7 @@ html
             .item New Refs API
             .item Portals
             .item Suspense
-            .item Dev Tools / Metrics
+            .item Hooks
 
         article
           h1 READY?!
@@ -105,7 +105,7 @@ html
             .item New Refs API
             .item Portals
             .item Suspense
-            .item Dev Tools / Metrics
+            .item Hooks
 
         article
           h1 Context
@@ -228,7 +228,7 @@ html
             .item New Refs API
             .item Portals
             .item Suspense
-            .item Dev Tools / Metrics
+            .item Hooks
         article
           h1.medium Fragments let us return multiple elements from a component
 
@@ -278,7 +278,7 @@ html
             .item New Refs API
             .item Portals
             .item Suspense
-            .item Dev Tools / Metrics
+            .item Hooks
 
         article
           h1 Error Boundaries
@@ -327,7 +327,7 @@ html
             .item.current New Refs API
             .item Portals
             .item Suspense
-            .item Dev Tools / Metrics
+            .item Hooks
 
         article
           h1 Refs!
@@ -385,7 +385,7 @@ html
             .item New Refs API
             .item.current Portals
             .item Suspense
-            .item Dev Tools / Metrics
+            .item Hooks
         article
           h1 Not Every Website is built 100% in React
         article
@@ -428,7 +428,7 @@ html
             .item New Refs API
             .item Portals
             .item.current Suspense
-            .item Dev Tools / Metrics
+            .item Hooks
         article
           h1 Suspense
           p.sub Coming To React Soon
@@ -477,7 +477,7 @@ html
 
         article
           p 1. Create a Cache
-          img.wide(src="./images/screenshots/3e72597e7c27.png")
+          img.wide(src="http://wes.io/4bdb29c2ab77/content")
 
         article
           p 2. Create a Resource from your async functions
@@ -504,30 +504,30 @@ html
           p.sub Remember we said we can decouple loading states?
 
         article
-          h1 Enter <code>&lt;Placeholder></code>
+          h1 Enter<br><code>&lt;Suspense></code>
 
         article
-          p 4. Wrap any components(s) with resources with a <code>&lt;Placeholder></code>
-          img(width="1200" src="./images/screenshots/a45b536fa6a1.png")
+          p 4. Wrap any components(s) with resources with a <code>&lt;Suspense></code>
+          img(src="http://wes.io/0996536ce5c9/content")
           p Then...
         article
-          p 5. Provide a <code>delayMs</code> and <code>fallback</code>  prop
-          img.wide(src="./images/screenshots/144acd093799.png")
+          p 5. Provide a <code>maxDuration</code> and <code>fallback</code>  prop
+          img.wide(src="http://wes.io/fd5fdf00a430/content")
         article
-          h1.white The <code>delayMs</code> prop determines how long to <mark>show nothing</mark>
+          h1.white The <code>maxDuration</code> prop determines how long to <mark>show nothing</mark>
         article
-          h1.medium.white The <code>fallback</code> prop is a component UI to show if render is still suspended past <code>delayMs</code>
+          h1.medium.white The <code>fallback</code> prop is a component UI to show if render is still suspended past <code>maxDuration</code>
         article
           h1 Some Important Notes
         article
           h1.medium A Placeholder can be placed <em>anywhere</em> you want the Loading UI to show.
 
         article
-          img.wide(src="./images/screenshots/08cbf7cf6b80.png")
+          img.high(src="http://wes.io/3860dcd61b7c/content")
         article
           h1.medium A Placeholder can have many children that contain resources - it will wait for all of them.
         article
-          img.high(src="./images/screenshots/7deabfa88ee9.png")
+          img.high(src="http://wes.io/a33ac2543db3/content")
 
         article
           h1 Demo
@@ -541,26 +541,70 @@ html
             .item New Refs API
             .item Portals
             .item Suspense
-            .item.current Dev Tools / Metrics
+            .item.current Hooks
 
         article
-          h1 Dev Tools and Metrics
-          p.sub Real Quick
+          h1 Hooks
+          p.sub 🎣
 
         article
-          h2 The new React profiler will give you insights into potential performance bottlenecks in your application
+          h2 Hooks are a new way to write State and other react features without writing classes.
+        article
+          h1 The Current "Problem"
+        article
+          img.wide(src="http://wes.io/3509e2a571e7/content")
+        article
+          h1 Oh I need state!
+          p.sub Better convert to a class!
+        article
+          img.high(src="http://wes.io/282aec2a9084/content")
+        article
+          h1 Oh and lifecycle methods!
+        article
+          img.high(src="http://wes.io/07d4b118290f/content")
+        article
+          p.small Oh and some other stuff too
+          img.high(src="http://wes.io/6244f455aa61/content")
+        article
+          h1 Enter Hooks
+        article
+          img.wide(src="http://wes.io/3e1306ca5eb2/content")
+        article
+          h1 Works with Context too
+        article
+          img.high(src="http://wes.io/cf35e286e5e5/content")
+
+        //- article
+          h1 Hooks allow us to share state logic between components
+        article
+          h1 useEffect
+          p.sub Lifecycle Methods + Side Effects
+        article
+          img.high(src="http://wes.io/d13e354b4a6f/content")
 
         article
-          ul.build
-            li How long a render took
-            li How many times a render happened
-            li Which components are expensive
-            li Props and State at time of Commit
-            li What caused a re-render
-
+          h1 Custom Hooks
         article
-          h1 More info on the React Blog
-          a(href="https://reactjs.org/blog/2018/09/10/introducing-the-react-profiler.html") Here
+          img.wide(src="http://wes.io/0f4d47d8386d/content")
+
+        //- article
+        //-   h1 Dev Tools and Metrics
+        //-   p.sub Real Quick
+
+        //- article
+        //-   h2 The new React profiler will give you insights into potential performance bottlenecks in your application
+
+        //- article
+        //-   ul.build
+        //-     li How long a render took
+        //-     li How many times a render happened
+        //-     li Which components are expensive
+        //-     li Props and State at time of Commit
+        //-     li What caused a re-render
+
+        //- article
+        //-   h1 More info on the React Blog
+        //-   a(href="https://reactjs.org/blog/2018/09/10/introducing-the-react-profiler.html") Here
 
         article
           h1 That's it!
